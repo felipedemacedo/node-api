@@ -14,3 +14,19 @@ tsc --init
 ***** tsc -w
 ***** nodemon dist/main.js
 
+
+--------------------------------------------------------------------
+http://localhost:3000/info?param1=value1&param2=value2
+
+{
+    browser: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.109 Safari/537.36",
+    method: "GET",
+    url: "/info?param1=value1&param2=value2",
+    path: "/info",
+    query: {
+        param1: "value1",
+        param2: "value2"
+    }
+}
+--------------------------------------------------------------------
+
