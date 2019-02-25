@@ -23,32 +23,6 @@ export class Server {
                     router.applyRoutes(this.application)
                 }
 
-                // http://localhost:3000/info?param1=value1&param2=value2
-
-                this.application.get("/info", [
-                    (req, resp, next) => {
-                      if (req.userAgent() && req.userAgent().includes("Edge")) {
-                        resp.status(400);
-                        resp.json({
-                          message: "This functionality does not work correctly on EDGE Broser."
-                        });
-                        return next(false);
-                      }
-                      return next();
-                    },
-                    (req, resp, next) => {
-                      resp.status(400);
-                      resp.json({
-                        browser: req.userAgent(),
-                        method: req.method,
-                        url: req.url,
-                        path: req.path(),
-                        query: req.query
-                      });
-                      return next();
-                    }
-                  ]);
-
                 this.application.listen(environment.server.port, () => {
                     //console.log("api is running on http://localhost:3000");
                     resolve(this.application)
