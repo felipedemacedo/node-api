@@ -44,3 +44,11 @@ http://localhost:3000/users
 ]
 
 --------------------------------------------------------------------
+
+http://localhost:3000/users/1
+
+{
+    id: "1",
+    name: "user 1",
+    email: "first@mail.com"
+}
